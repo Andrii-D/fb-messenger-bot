@@ -1,0 +1,13 @@
+version: '2'
+services:
+  fb-bot:
+    build:
+      context: .
+    environment:
+      VERIFY_TOKEN: "$VERIFY_TOKEN"
+    volumes:
+     - .:/project
+    restart: unless-stopped
+    ports:
+     - "80:8000"
+    command: gunicorn app:app --log-file=- --bind="0.0.0.0:8000"
