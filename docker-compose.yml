@@ -5,6 +5,7 @@ services:
       context: .
     environment:
       VERIFY_TOKEN: "$VERIFY_TOKEN"
+      PAGE_ACCESS_TOKEN: "$PAGE_ACCESS_TOKEN"
     volumes:
      - .:/project
     restart: unless-stopped
